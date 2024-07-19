@@ -1,0 +1,16 @@
+<h1><%= "There are #{@nation_members.count} in the #{@nation}" %></h1>
+
+<% @nation_members.map do |member| %>
+
+  <h2>Name: <%= member.name %></h2>
+  <h2><%= image_tag("#{member.photo_url}") %></h2>
+  <h2>Affiliation: <%= member.affiliations %></h2>
+
+  <h2>Allies: <% member.allies.each do |ally| %><%= ally %></h2>
+   
+  <% end %>
+  <h2>Enemies: <% member.enemies.each do |e| %>   <%= e %></h2>
+
+  <% end %>
+
+<% end %>
